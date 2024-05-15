@@ -18,11 +18,8 @@ public class StatPanel extends JPanel {
         Graphics2D g2d = (Graphics2D) g;
 
         // Draw points
-        g2d.setColor(Color.BLUE);
         for (Point point : points) {
-            int x = (int) point.getX();
-            int y = (int) point.getY();
-            g2d.fillOval(x - 5, y - 5, 10, 10);
+            point.draw(g2d);
         }
 
         int middleIndex = points.size() / 2;
@@ -31,7 +28,7 @@ public class StatPanel extends JPanel {
         // Draw lines connecting points
         g2d.setColor(Color.BLUE);
         for (Point point : points) {
-            g2d.drawLine((int) point.getX(), (int) point.getY(), (int) middlePoint.getX(), (int) middlePoint.getY());
+            g2d.drawLine(point.getX(), point.getY(), middlePoint.getX(), middlePoint.getY());
         }
     }
 

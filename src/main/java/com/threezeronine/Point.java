@@ -37,6 +37,6 @@ public class Point {
         else if (this.x <= width && this.y <= height){
             g.setColor(Color.ORANGE);
         }
-        g.fillOval(this.x, this.y, 10, 10);
+        g.fillOval(this.x-5, this.y-5, 10, 10);
     }
 }
