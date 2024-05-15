@@ -26,6 +26,9 @@ public class CalculateStat {
         return points;
     }
     public static List<Point> findCornerPoints(List<Point> points) {
+        if (points.isEmpty()) {
+            return points;
+        }
         List<Point> cornerPoints = new ArrayList<>();
 
         // Find the point with the smallest sum of x and y coordinates (top-left)
@@ -47,6 +50,10 @@ public class CalculateStat {
         Point topRight = points.stream()
                 .max(Comparator.comparingDouble(p -> p.getX() - p.getY()))
                 .orElse(null);
+
+        for (Point p : points) {
+
+        }
 
         if (topLeft != null) cornerPoints.add(topLeft);
         if (bottomLeft != null) cornerPoints.add(bottomLeft);
