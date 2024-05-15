@@ -36,7 +36,14 @@ public class Repository extends PropertyChangeSupport {
         boolean swapped;
         for (i = 0; i < pointList.size()-1; i++){
             swapped = false;
-            for (j =0; j < pointList.size()-i-1; j++){
+            for (j =0; j < pointList.size()-i-2; j++){
+                /*if (getDistance(pointList.get(j), pointList.get(j+1)) > getDistance(pointList.get(j+1), pointList.get(j+2))){
+                    tmp = pointList.get(j);
+                    pointList.set(j, pointList.get(j+1));
+                    pointList.set(j+1, tmp);
+                    swapped = true;
+                }
+                 */
                 if (pointList.get(j).getX() > pointList.get(j+1).getX()){
                     tmp = pointList.get(j);
                     pointList.set(j, pointList.get(j+1));
