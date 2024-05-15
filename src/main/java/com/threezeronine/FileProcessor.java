@@ -6,16 +6,12 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class FileProcessor {
-    private String fname;
-    public FileProcessor(String fname) {
-        this.fname = fname;
-    }
 
-    public void reader() throws FileNotFoundException {
+    public static void read(String fName) throws FileNotFoundException {
         int flag = 0;
         ArrayList<Point> points = new ArrayList<>();
+        Scanner scanner = new Scanner(new File(fName));
 
-        Scanner scanner = new Scanner(new File(this.fname));
         while (scanner.hasNextLine()) {
             String line = scanner.nextLine();
             if (line.equals("EOF")) {
