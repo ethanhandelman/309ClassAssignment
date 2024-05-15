@@ -34,6 +34,9 @@ public class Main extends JFrame implements ActionListener {
 
         Handler handler = new Handler();
         canvas.addMouseListener(handler);
+        Repository.getInstance().setSize(getWidth(), getHeight());
+        Repository.getInstance().addPropertyChangeListener(canvas);
+        repaint();
     }
 
     public static void main(String[] args) {
@@ -42,6 +45,7 @@ public class Main extends JFrame implements ActionListener {
         main.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         main.setSize(1000, 500);
         main.setVisible(true);
+        Repository.getInstance().setSize(main.getWidth(), main.getHeight());
     }
 
     @Override
