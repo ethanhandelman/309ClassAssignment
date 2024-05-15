@@ -24,6 +24,7 @@ public class Repository extends PropertyChangeSupport {
     }
     public void addPoints(List<Point> pointList) {
         this.pointList = pointList;
+        System.out.println(pointList);
     }
 
     public void addPoint(Point point) {
