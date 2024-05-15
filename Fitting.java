@@ -1,6 +1,9 @@
 import java.awt.*;
 import java.util.ArrayList;
 
+/**
+ * @author Andy Duong, Riya Badadare, Saylor Benes
+ */
 public class Fitting {
 
     private static double factor;
