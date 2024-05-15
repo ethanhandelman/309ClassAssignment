@@ -55,6 +55,11 @@ public class Main extends JFrame implements ActionListener {
     public void actionPerformed(ActionEvent e) {
         if (e.getActionCommand().equals("Load")) {
             // insert load method here
+            try {
+                FileProcessor.read("test.tsp");
+            } catch (FileNotFoundException ex) {
+                throw new RuntimeException(ex);
+            }
         } else if (e.getActionCommand().equals("Run")) {
             // insert run method here
         } else if (e.getActionCommand().equals("Statistics")) {

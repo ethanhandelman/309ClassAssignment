@@ -1,5 +1,9 @@
 package com.threezeronine;
 
+/**
+ * Aayush Joshi, Molly Sandler, Jemma Arona
+ */
+
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
@@ -34,7 +38,7 @@ public class FileProcessor {
                 flag = 1;
             }
         }
-        Fitting.fit((ArrayList<Point>) points);
+        points = Fitting.fit((ArrayList<Point>) points);
         Repository repo = Repository.getInstance();
         repo.addPoints(points);
     }
