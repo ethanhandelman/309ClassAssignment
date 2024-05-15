@@ -3,6 +3,8 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
 import java.io.FileNotFoundException;
+import java.util.ArrayList;
+import java.util.List;
 
 public class Main extends JFrame implements ActionListener {
 
@@ -64,6 +66,11 @@ public class Main extends JFrame implements ActionListener {
             // insert run method here
         } else if (e.getActionCommand().equals("Statistics")) {
             // insert statistics method here
+            List<Point> ls = Repository.getInstance().getList();
+            List<Point> corners = CalculateStat.findCornerPoints(ls);
+            Point mid = CalculateStat.findMiddlePoint(ls);
+            corners.add(mid);
+            new StatPanel(corners);
         } else if (e.getActionCommand().equals("Exit")) {
             System.exit(0);
         } 

@@ -39,4 +39,11 @@ public class Point {
         }
         g.fillOval(this.x, this.y, 10, 10);
     }
+
+    public void setX(int x){
+        this.x = x;
+    }
+    public void setY(int y){
+        this.y = y;
+    }
 }

@@ -3,13 +3,14 @@ package com.threezeronine;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 public class FileProcessor {
 
     public static void read(String fName) throws FileNotFoundException {
         int flag = 0;
-        ArrayList<Point> points = new ArrayList<>();
+        List<Point> points = new ArrayList<Point>();
         Scanner scanner = new Scanner(new File(fName));
 
         while (scanner.hasNextLine()) {
@@ -33,7 +34,7 @@ public class FileProcessor {
                 flag = 1;
             }
         }
-        Fitting.fit(points);
+        Fitting.fit((ArrayList<Point>) points);
         Repository repo = Repository.getInstance();
         repo.addPoints(points);
     }
