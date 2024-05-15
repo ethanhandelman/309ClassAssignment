@@ -9,53 +9,47 @@ import javax.swing.JPanel;
 import java.util.Comparator;
 
 public class CalculateStat {
-
-    public static List<Point> generatePoints(JPanel panel, int numberOfPoints) {
-        List<Point> points = new ArrayList<>();
-        Dimension panelSize = panel.getSize();
-        int panelWidth = panelSize.width;
-        int panelHeight = panelSize.height;
-
-        Random random = new Random();
-
-        for (int i = 0; i < numberOfPoints; i++) {
-            int x = random.nextInt(panelWidth);
-            int y = random.nextInt(panelHeight);
-            Point point = new Point(x, y);
-            points.add(point);
-        }
-
-        return points;
-    }
     public static List<com.threezeronine.Point> findCornerPoints(List<com.threezeronine.Point> points) {
+        if (points.isEmpty()) {
+            return points;
+        }
         List<com.threezeronine.Point> cornerPoints = new ArrayList<>();
 
-        // Find the point with the smallest sum of x and y coordinates (top-left)
-        /*Point topLeft = points.stream()
-                .min(Comparator.comparingDouble(p -> p.getX() + p.getY()))
-                .orElse(null);
-        //com.threezeronine.Point tl = new com.threezeronine.Point(topLeft.x, topLeft.y);
+        // Initialize the corner points with the first com.threezeronine.Point in the list
+        com.threezeronine.Point topLeft = points.get(0);
+        com.threezeronine.Point bottomLeft = points.get(0);
+        com.threezeronine.Point bottomRight = points.get(0);
+        com.threezeronine.Point topRight = points.get(0);
 
-        // Find the point with the smallest difference of x and y coordinates (bottom-left)
-        Point bottomLeft = points.stream()
-                .min(Comparator.comparingDouble(p -> p.getX() - p.getY()))
-                .orElse(null);
+        // Iterate through the list of points and update the corner points
+        for (com.threezeronine.Point point : points) {
+            // Update the top-left point
+            if (point.getX() + point.getY() < topLeft.getX() + topLeft.getY()) {
+                topLeft = point;
+            }
 
-        // Find the point with the largest sum of x and y coordinates (bottom-right)
-        Point bottomRight = points.stream()
-                .max(Comparator.comparingDouble(p -> p.getX() + p.getY()))
-                .orElse(null);
+            // Update the bottom-left point
+            if (point.getX() - point.getY() < bottomLeft.getX() - bottomLeft.getY()) {
+                bottomLeft = point;
+            }
 
-        // Find the point with the largest difference of x and y coordinates (top-right)
-        Point topRight = points.stream()
-                .max(Comparator.comparingDouble(p -> p.getX() - p.getY()))
-                .orElse(null);
+            // Update the bottom-right point
+            if (point.getX() + point.getY() > bottomRight.getX() + bottomRight.getY()) {
+                bottomRight = point;
+            }
 
+            // Update the top-right point
+            if (point.getX() - point.getY() > topRight.getX() - topRight.getY()) {
+                topRight = point;
+            }
+        }
+
+        // Add the corner points to the list
         if (topLeft != null) cornerPoints.add(topLeft);
         if (bottomLeft != null) cornerPoints.add(bottomLeft);
         if (bottomRight != null) cornerPoints.add(bottomRight);
         if (topRight != null) cornerPoints.add(topRight);
-*/
+
         return cornerPoints;
     }
 
