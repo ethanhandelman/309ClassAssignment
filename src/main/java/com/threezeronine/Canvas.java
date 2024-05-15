@@ -11,6 +11,8 @@ public class Canvas extends JPanel implements PropertyChangeListener {
         for (Point point : Repository.getInstance().getList()){
             point.draw(g);
         }
+        Line line = new Line();
+        line.draw(g);
     }
 
     @Override
