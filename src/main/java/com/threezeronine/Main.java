@@ -2,6 +2,7 @@ package com.threezeronine;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
+import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -51,6 +52,11 @@ public class Main extends JFrame implements ActionListener {
     public void actionPerformed(ActionEvent e) {
         if (e.getActionCommand().equals("Load")) {
             // insert load method here
+            try {
+                FileProcessor.read("test.tsp");
+            } catch (FileNotFoundException ex) {
+                throw new RuntimeException(ex);
+            }
         } else if (e.getActionCommand().equals("Run")) {
             // insert run method here
         } else if (e.getActionCommand().equals("Statistics")) {
@@ -59,7 +65,8 @@ public class Main extends JFrame implements ActionListener {
             List<Point> corners = CalculateStat.findCornerPoints(ls);
             Point mid = CalculateStat.findMiddlePoint(ls);
             corners.add(mid);
-            new StatPanel(corners);
+            StatPanel statpanel = new StatPanel(corners);
+            JOptionPane.showInputDialog(statpanel);
         } else if (e.getActionCommand().equals("Exit")) {
             System.exit(0);
         } 

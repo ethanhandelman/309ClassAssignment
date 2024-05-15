@@ -1,4 +1,5 @@
-import java.awt.*;
+package com.threezeronine;
+
 import java.util.ArrayList;
 
 /**
@@ -14,16 +15,17 @@ public class Fitting {
     public static ArrayList<Point> fit(ArrayList<Point> points){
 
         for(Point p : points){
-            if (smallestX > p.x) smallestX = p.x;
-            if (smallestY > p.y) smallestY = p.y;
-            if (greatestX < p.x) greatestX = p.x;
-            if (greatestY < p.y) greatestY = p.y;
+            if (smallestX > p.getX()) smallestX = p.getX();
+            if (smallestY > p.getY()) smallestY = p.getY();
+            if (greatestX < p.getX()) greatestX = p.getX();
+            if (greatestY < p.getY()) greatestY = p.getY();
         }
 
         calculateFactor();
 
         for (Point p : points) {
-            p.setLocation(p.x * factor, p.y * factor);
+            p.setX((int) (p.getX() * factor));
+            p.setY((int) (p.getY() * factor));
         }
 
         return points;
