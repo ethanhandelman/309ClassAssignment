@@ -43,7 +43,7 @@ public class Weather extends JPanel {
         BufferedReader reader = new BufferedReader(new InputStreamReader(inputStream));
 
         StringBuilder response = new StringBuilder();
-        String inputLine = "";
+        String inputLine;
         while ((inputLine = reader.readLine()) != null) {
             response.append(inputLine);
         }
