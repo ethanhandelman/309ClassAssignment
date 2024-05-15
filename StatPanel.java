@@ -26,7 +26,7 @@ public class StatPanel extends JPanel {
         int middleIndex = points.size() / 2;
         Point middlePoint = points.get(middleIndex);
 
-        // Draw lines connecting points to the middle point
+        // Draw lines connecting points
         g2d.setColor(Color.BLUE);
         for (Point point : points) {
             g2d.drawLine((int) point.getX(), (int) point.getY(), (int) middlePoint.getX(), (int) middlePoint.getY());
