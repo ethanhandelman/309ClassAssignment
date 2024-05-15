@@ -63,7 +63,14 @@ public class Main extends JFrame implements ActionListener {
             List<Point> corners = CalculateStat.findCornerPoints(ls);
             Point mid = CalculateStat.findMiddlePoint(ls);
             corners.add(mid);
-            new StatPanel(corners);
+
+            StatPanel statPanel = new StatPanel(corners);
+            JFrame statFrame = new JFrame("Statistics");
+            statFrame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+            statFrame.add(statPanel);
+            statFrame.pack();
+            statFrame.setLocationRelativeTo(null);
+            statFrame.setVisible(true);
         } else if (e.getActionCommand().equals("Exit")) {
             System.exit(0);
         } 
