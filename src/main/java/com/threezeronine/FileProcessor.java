@@ -35,8 +35,6 @@ public class FileProcessor {
         }
         Fitting.fit(points);
         Repository repo = Repository.getInstance();
-        for (Point p : points) {
-            repo.addPoint(p);
-        }
+        repo.addPoints(points);
     }
 }
