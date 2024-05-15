@@ -27,7 +27,7 @@ public class FileProcessor {
 
                 double y_cord = Double.parseDouble(line);
 
-                points.add(new Point(x_cord, y_cord));
+                points.add(new Point((int)x_cord, (int)y_cord));
 
             } else if (flag == 0 && line.charAt(0) == '1') {
                 flag = 1;
