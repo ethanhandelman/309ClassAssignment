@@ -34,8 +34,8 @@ public class Fitting {
         double total_width = greatestX - smallestX;
 
         Repository repository = Repository.getInstance();
-        double xFactor = repository.getScreenHeight()/total_height;
-        double yFactor = repository.getScreenWidth()/total_width;
+        double xFactor = repository.getHeight()/total_height;
+        double yFactor = repository.getWidth()/total_width;
 
         if (xFactor < yFactor)
             factor = xFactor;
