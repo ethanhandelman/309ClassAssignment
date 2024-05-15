@@ -32,4 +32,23 @@ public class StatPanel extends JPanel {
         }
     }
 
+    //    public static void main(String[] args) {
+//        List<Point> testPoints = new ArrayList<>();
+//        testPoints.add(new Point(50, 50));
+//        testPoints.add(new Point(100, 100));
+//        testPoints.add(new Point(150, 75));
+//        testPoints.add(new Point(200, 125));
+//        testPoints.add(new Point(250, 100));
+//
+//        JFrame frame = new JFrame("StatPanel Test");
+//        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+//        frame.setSize(400, 400);
+//        frame.setLocationRelativeTo(null);
+//
+//        StatPanel statPanel = new StatPanel(testPoints);
+//        frame.add(statPanel);
+//
+//        frame.setVisible(true);
+//    }
+
 }
