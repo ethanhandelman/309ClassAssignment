@@ -1,6 +1,9 @@
 package com.threezeronine;
 import java.awt.event.*;
 
+/**
+ * @author Fisher Lyon, Leo Rivera, Eric Berber
+ */
 public class Handler implements MouseListener {
 
     @Override

@@ -4,6 +4,9 @@ import java.awt.*;
 import java.beans.PropertyChangeEvent;
 import java.beans.PropertyChangeListener;
 
+/**
+ * @author Fisher Lyon, Leo Rivera, Eric Berber
+ */
 public class Canvas extends JPanel implements PropertyChangeListener {
     @Override
     protected void paintComponent(Graphics g) {

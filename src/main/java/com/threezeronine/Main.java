@@ -6,6 +6,9 @@ import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * @author Fisher Lyon, Leo Rivera, Eric Berber
+ */
 public class Main extends JFrame implements ActionListener {
 
     public Main() {
@@ -52,11 +55,6 @@ public class Main extends JFrame implements ActionListener {
     public void actionPerformed(ActionEvent e) {
         if (e.getActionCommand().equals("Load")) {
             // insert load method here
-            try {
-                FileProcessor.read("test.tsp");
-            } catch (FileNotFoundException ex) {
-                throw new RuntimeException(ex);
-            }
         } else if (e.getActionCommand().equals("Run")) {
             // insert run method here
         } else if (e.getActionCommand().equals("Statistics")) {
@@ -65,8 +63,7 @@ public class Main extends JFrame implements ActionListener {
             List<Point> corners = CalculateStat.findCornerPoints(ls);
             Point mid = CalculateStat.findMiddlePoint(ls);
             corners.add(mid);
-            StatPanel statpanel = new StatPanel(corners);
-            JOptionPane.showInputDialog(statpanel);
+            new StatPanel(corners);
         } else if (e.getActionCommand().equals("Exit")) {
             System.exit(0);
         } 
