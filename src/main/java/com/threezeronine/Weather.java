@@ -16,8 +16,9 @@ import org.json.*;
         Devin Hadley
         Miro Haapalainen
  */
-public class Weather extends JPanel {
 
+public class Weather extends JPanel {
+    private static final String apiKey = "";
     public Weather(String code) {
         setBackground(Color.GRAY);
         setLayout(new GridLayout(1,1));
@@ -32,10 +33,9 @@ public class Weather extends JPanel {
     private double getTemperature(String LocationKey) throws Exception {
 
         //String LocationKey = "331999"; // San Luis Obispo
-        String apikey = "QVT4nid8IM60W3f3LMCG7NW0eKRbmsSf";
         String urlStr = "http://dataservice.accuweather.com/currentconditions/v1/"
                 + LocationKey
-                + "?apikey=" + apikey;
+                + "?apikey=" + apiKey;
 
         URL url = new URL(urlStr);
         URLConnection connection = url.openConnection();
@@ -43,7 +43,7 @@ public class Weather extends JPanel {
         BufferedReader reader = new BufferedReader(new InputStreamReader(inputStream));
 
         StringBuilder response = new StringBuilder();
-        String inputLine = "";
+        String inputLine;
         while ((inputLine = reader.readLine()) != null) {
             response.append(inputLine);
         }
