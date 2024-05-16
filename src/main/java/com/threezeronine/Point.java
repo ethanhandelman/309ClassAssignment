@@ -2,6 +2,9 @@ package com.threezeronine;
 
 import java.awt.*;
 
+/**
+ * @author Jonathan Jara, Tommy Pho, Du Tran
+ */
 public class Point {
     private int x;
     private int y;

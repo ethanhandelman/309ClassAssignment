@@ -3,6 +3,9 @@ package com.threezeronine;
 import java.awt.*;
 import java.util.List;
 
+/**
+ * @author Jonathan Jara, Tommy Pho, Du Tran
+ */
 public class Line {
     public void draw(Graphics g){
         g.setColor(Color.BLUE);

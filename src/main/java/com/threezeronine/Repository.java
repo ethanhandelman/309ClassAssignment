@@ -4,6 +4,9 @@ import java.awt.*;
 import java.util.List;
 import java.util.ArrayList;
 
+/**
+ * @author Jonathan Jara, Tommy Pho, Du Tran
+ */
 public class Repository extends PropertyChangeSupport {
     private static Repository instance = null;
     private int width;
