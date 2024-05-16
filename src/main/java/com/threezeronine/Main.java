@@ -3,7 +3,6 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
 import java.io.FileNotFoundException;
-import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -54,16 +53,14 @@ public class Main extends JFrame implements ActionListener {
     @Override
     public void actionPerformed(ActionEvent e) {
         if (e.getActionCommand().equals("Load")) {
-            // insert load method here
             try {
                 FileProcessor.read("test.tsp");
             } catch (FileNotFoundException ex) {
                 throw new RuntimeException(ex);
             }
         } else if (e.getActionCommand().equals("Run")) {
-            // insert run method here
+            Repository.getInstance().repaint();
         } else if (e.getActionCommand().equals("Statistics")) {
-            // insert statistics method here
             List<Point> ls = Repository.getInstance().getList();
             List<Point> corners = CalculateStat.findCornerPoints(ls);
             Point mid = CalculateStat.findMiddlePoint(ls);
